@@ -18,7 +18,7 @@ let computer_win=0;
 let player_win=0;
 function playground()
 {
-    const player=prompt("Enter anything among rock, paper and scissors: ")
+    // const player=prompt("Enter anything among rock, paper and scissors: ")
     const player_selection=player.toLowerCase();
     const computer_selection=getComputerChoice();
     if(player_selection=='rock')
@@ -77,10 +77,10 @@ function playground()
 
 function playgame()
 {
-    for(let i=0;i<5;i++)
-    {
-        playground();
-    }
+    // for(let i=0;i<5;i++)
+    // {
+    //     playground();
+    // }
     let lose_num=computer_win - player_win;
     let win_num=player_win-computer_win;
     if(computer_win>player_win)
