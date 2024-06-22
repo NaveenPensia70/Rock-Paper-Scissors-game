@@ -1,4 +1,20 @@
-
+let rock= document.querySelector("#rock-btn");
+let paper=document.querySelector("#paper-btn");
+let scissors=document.querySelector("#scissors-btn");
+let player_selection='';
+rock.addEventListener('click',(event)=>{
+    player_selection='rock';
+    playground();
+})
+paper.addEventListener('click',(event)=>{
+    player_selection='paper';
+    playground();
+})
+scissors.addEventListener('click',(event)=>{
+    player_selection='scissors';
+    playground();
+})
+// player_button();
 function getComputerChoice()
 {
     const random_choice=Math.floor(Math.random()*3);
@@ -12,15 +28,15 @@ function getComputerChoice()
             return 'scissors';
     }
 }
+
 // console.log(player_selection);
 // console.log(computer_selection);
 let computer_win=0;
 let player_win=0;
 function playground()
 {
-    const player=prompt("Enter anything among rock, paper and scissors: ")
-    const player_selection=player.toLowerCase();
-    const computer_selection=getComputerChoice();
+    
+    let computer_selection=getComputerChoice();
     if(player_selection=='rock')
     {
         if(computer_selection=='paper')
@@ -40,7 +56,7 @@ function playground()
     }
     if(player_selection=='paper')
     {
-        if(computer_selection=='scissors')
+        if(computer_selection=="scissors")
         {
             console.log("You lose!! scissors beats paper.");
             return ++computer_win;
@@ -55,7 +71,7 @@ function playground()
             console.log("That's a tie!!");
         }
     }
-    if(player_selection=='scissors')
+    if(player_selection=="scissors")
     {
         if(computer_selection=='rock')
         {
@@ -67,7 +83,7 @@ function playground()
             console.log("You won!! scissors beats paper")
             return ++player_win;
         }
-        else if(computer_selection=='scissors')
+        else if(computer_selection=="scissors")
         {
             console.log("That's a tie.");
         }
@@ -75,24 +91,21 @@ function playground()
 
 }
 
-function playgame()
-{
-    for(let i=0;i<5;i++)
-    {
-        playground();
-    }
-    let lose_num=computer_win - player_win;
-    let win_num=player_win-computer_win;
-    if(computer_win>player_win)
-    {
-        console.log(`Sorry!! you have lost by ${lose_num} because you have only won ${player_win} rounds and computer won ${computer_win} rounds.`);
-    }
-    else if(player_win>computer_win)
-    {
-        console.log(`Congratulation!! you have won by  ${win_num} as you have won ${player_win} rounds and computer won only  ${computer_win} rounds.`)
-    }
-    else{
-        console.log(`That's a tie!! as you have won ${win_num} - ${lose_num} rounds.`);
-    }
-}
-playgame();
+
+// function playgame()
+// {
+    
+    
+//     let lose_num=computer_win - player_win;
+//     let win_num=player_win-computer_win;
+//     if(computer_win>player_win)
+//     {
+//         console.log(`Sorry!! you have lost by ${lose_num} because you have only won ${player_win} rounds and computer won ${computer_win} rounds.`);
+//     }
+//     else if(player_win>computer_win)
+//     {
+//         console.log(`Congratulation!! you have won by  ${win_num} as you have won ${player_win} rounds and computer won only  ${computer_win} rounds.`)
+//     }
+    
+// }
+// playgame();
