@@ -71,7 +71,7 @@ function playground()
             console.log("That's a tie!!");
         }
     }
-    if(player_selection==scissors)
+    if(player_selection=="scissors")
     {
         if(computer_selection=='rock')
         {
@@ -90,7 +90,7 @@ function playground()
     }
 
 }
-playground();
+
 
 // function playgame()
 // {
