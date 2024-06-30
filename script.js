@@ -1,26 +1,26 @@
 let rock = document.querySelector("#rock-btn");
 let paper = document.querySelector("#paper-btn");
 let scissors = document.querySelector("#scissors-btn");
-let player_selection = '';
-let computer_win = 0;
-let player_win = 0;
+let playerSelection = '';
+let computerPoint = 0;
+let playerPoint = 0;
 
 rock.addEventListener('click', (event) => {
-    player_selection = 'rock';
+    playerSelection = 'rock';
     playground();
 });
 paper.addEventListener('click', (event) => {
-    player_selection = 'paper';
+    playerSelection = 'paper';
     playground();
 });
 scissors.addEventListener('click', (event) => {
-    player_selection = 'scissors';
+    playerSelection = 'scissors';
     playground();
 });
 
 function getComputerChoice() {
-    const random_choice = Math.floor(Math.random() * 3);
-    switch (random_choice) {
+    const randomChoice = Math.floor(Math.random() * 3);
+    switch (randomChoice) {
         case 0:
             return 'rock';
         case 1:
@@ -30,58 +30,70 @@ function getComputerChoice() {
     }
 }
 
+function showChoice(){
+    console.log(`Player Choice: ${playerSelection}`);
+    console.log('Computer Choice: ',getComputerChoice());
+}
+
+function showPoints(){
+    console.log(`Player Points: ${playerPoint}`);
+    console.log(`Computer Points: ${computerPoint}`);
+}
+
 function playground() {
-    let computer_selection = getComputerChoice();
-    if (player_win < 5 && computer_win < 5) {
-        if (player_selection == 'rock') {
-            if (computer_selection == 'paper') {
+    let computerSelection = getComputerChoice();
+    if (playerPoint < 5 && computerPoint < 5) {
+        showChoice();
+        if (playerSelection == 'rock') {
+            if (computerSelection == 'paper') {
                 console.log("You lose!! paper beats rock.");
-                computer_win++;
-            } else if (computer_selection == 'scissors') {
+                computerPoint++;
+            } else if (computerSelection == 'scissors') {
                 console.log("You won!! rock beats scissors.");
-                player_win++;
-            } else if (computer_selection == 'rock') {
+                playerPoint++;
+            } else if (computerSelection == 'rock') {
                 console.log("That's a tie!!");
             }
-        } else if (player_selection == 'paper') {
-            if (computer_selection == "scissors") {
+        } else if (playerSelection == 'paper') {
+            if (computerSelection == "scissors") {
                 console.log("You lose!! scissors beats paper.");
-                computer_win++;
-            } else if (computer_selection == 'rock') {
+                computerPoint++;
+            } else if (computerSelection == 'rock') {
                 console.log("You won!! paper beats rock.");
-                player_win++;
-            } else if (computer_selection == 'paper') {
+                playerPoint++;
+            } else if (computerSelection == 'paper') {
                 console.log("That's a tie!!");
             }
-        } else if (player_selection == "scissors") {
-            if (computer_selection == 'rock') {
+        } else if (playerSelection == "scissors") {
+            if (computerSelection == 'rock') {
                 console.log("You lose!! rock beats scissors");
-                computer_win++;
-            } else if (computer_selection == 'paper') {
+                computerPoint++;
+            } else if (computerSelection == 'paper') {
                 console.log("You won!! scissors beats paper");
-                player_win++;
-            } else if (computer_selection == "scissors") {
+                playerPoint++;
+            } else if (computerSelection == "scissors") {
                 console.log("That's a tie.");
             }
         }
-
-        if (player_win == 5 || computer_win == 5) {
+        showPoints();
+        if (playerPoint == 5 || computerPoint == 5) {
             playgame();
         }
     }
 }
 
 function playgame() {
-    let win_margin = player_win - computer_win;
-    let lose_margin = computer_win - player_win;
-    if (player_win == 5 || computer_win == 5) {
-        if (computer_win > player_win) {
-            console.log(`Sorry!! you have lost the match by ${lose_margin} points.`);
+    let playerWin = playerPoint - computerPoint;
+    let computerWin = computerPoint - playerPoint;
+    // if (playerPoint == 5 || computerPoint == 5) {
+        if (computerPoint > playerPoint) {
+            console.log(`Sorry!! you have lost the match by ${computerWin} points.`);
         } else {
-            console.log(`Congratulations!! you won by ${win_margin} points.`);
+            console.log(`Congratulations!! you won by ${playerWin} points.`);
         }
         // Optionally, you can reset the game here if you want to play again
-        // computer_win = 0;
-        // player_win = 0;
-    }
+        computerPoint = 0;
+        playerPoint = 0;
+        
+    // }
 }
