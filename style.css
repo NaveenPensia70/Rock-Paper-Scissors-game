@@ -1,0 +1,10 @@
+#choice-container{
+    display: flex;
+ width: 100px;
+ height: 100px;
+ gap: 50px;
+}
+body{
+    background-image: url('./images/rcp-background.jpg');
+    
+}
