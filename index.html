@@ -6,24 +6,29 @@
     <title>Rock-Paper-Scissors-game</title>
     <script defer src="./script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>ROCK PAPER & SCISSORS</h1>
-    <div id="result-container">
-        <div id="show-result"></div>
-        <div id="choice-container">
+    <div class="game-container">
+    <h1 class="title game-item">ROCK PAPER & SCISSORS</h1>
+    <div class="result-container" >
+        <div class="show-result result-item"></div>
+        <div class="choice-container result-item"> </div>
             <!-- <img id="choice-img" alt="choice image"> -->
-            <div id="points-container">
-                <p id="show-player-points"></p>
-                <p id="show-computer-points"></p>
-            </div>
+
+            <div class="points-container result-item">
+                <p class="show-player-points"></p>
+                <p class="show-computer-points"></p>
+           
         </div>
     </div>
-    <div class="button-container">
-        <button id="rock-btn">Rock</button>
-        <button id="paper-btn">Paper</button>
-        <button id="scissors-btn">Scissors</button>
-    </div>
-    
+    <div class="button-container game-item">
+        <button class="rock-btn"><img src="./images/rockgame.jpg" alt=""><p>ROCK</p></button>
+        <button class="paper-btn"><img src="./images/papergame.jpg" alt=""><p>PAPER</p></button>
+        <button class="scissors-btn"><img src="./images/scissorsgame.jpg" alt=""><p>SCISSORS</p></button>
+    </div> 
+</div>
 </body>
 </html>
