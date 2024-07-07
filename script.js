@@ -1,14 +1,13 @@
-let rock = document.querySelector("#rock-btn");
-let paper = document.querySelector("#paper-btn");
-let scissors = document.querySelector("#scissors-btn");
-let showResult=document.querySelector("#show-result");
-let choiceContainer=document.querySelector("#choice-container");
-let pointsContainer=document.querySelector("#points-container");
-let displayPlayerPoints=document.querySelector("#show-player-points");
-let displayComputerPoints=document.querySelector("#show-computer-points");
+let rock = document.querySelector(".rock-btn");
+let paper = document.querySelector(".paper-btn");
+let scissors = document.querySelector(".scissors-btn");
+let showResult=document.querySelector(".show-result");
+let choiceContainer=document.querySelector(".choice-container");
+let pointsContainer=document.querySelector(".points-container");
+let displayPlayerPoints=document.querySelector(".show-player-points");
+let displayComputerPoints=document.querySelector(".show-computer-points");
 let playerChoice=document.createElement("img");
 let computerChoice=document.createElement("img");
-
 let rockUrl='images/rockgame.jpg';
 let paperUrl='images/papergame.jpg';
 let scissorsUrl='images/scissorsgame.jpg';
@@ -16,11 +15,14 @@ let playerSelection = '';
 let computerPoint = 0;
 let playerPoint = 0;
 
+playerChoice.classList.add("player-choice");
+computerChoice.classList.add("computer-choice");
+
 function defaultSetup(){
     playerChoice.src=paperUrl;
     computerChoice.src=rockUrl;
-    choiceContainer.insertBefore(playerChoice,pointsContainer);
-    choiceContainer.insertBefore(computerChoice,pointsContainer);
+    choiceContainer.append(playerChoice);
+    choiceContainer.append(computerChoice);
     displayPlayerPoints.textContent=`Player Points: ${playerPoint}`;
     displayComputerPoints.textContent=`Computer Points: ${computerPoint}`;
 }
@@ -71,8 +73,8 @@ function playground() {
     let computerSelection = getComputerChoice();
     if (playerPoint < 5 && computerPoint < 5) {
         // showChoice();
-        choiceContainer.insertBefore(playerChoice,pointsContainer);
-        choiceContainer.insertBefore(computerChoice,pointsContainer);
+        choiceContainer.append(playerChoice);
+        choiceContainer.append(computerChoice);
         if (playerSelection == 'rock') {
             if (computerSelection == 'paper') {
                 showResult.textContent="You lose!! paper beats rock.";

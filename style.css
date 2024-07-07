@@ -1,10 +1,101 @@
-#choice-container{
-    display: flex;
- width: 100px;
- height: 100px;
- gap: 50px;
+*{
+    margin: 0;
+    padding: 0;
 }
+
 body{
-    background-image: url('./images/rcp-background.jpg');
+    background-image: url('./images/rcp_background.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.game-container{
+    /* border: 3px solid white; */
+    padding: 20px;
+    /* background-color: aquamarine; */
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     
+}
+
+/* .game-item{
+    border: 2px solid blue;
+} */
+
+/* .title{
+    width: 600px;
+} */
+.anton-sc-regular,.title{
+    font-family: "Anton SC", sans-serif;
+    font-weight: 500;
+    font-size: 90px;
+    font-style: normal;
+    word-spacing: 20px;
+  }
+  
+
+
+.player-choice,.computer-choice{
+    height: 200px;
+    width: 200px;
+}
+
+.result-container{
+    width: 900px;
+    height: 400px; 
+    background-color: rgb(97, 92, 91);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.show-result{
+    font: bold 30px Arial, sans-serif;
+    color: white;
+    
+}
+/* .result-item{
+    border: 2px solid red;
+} */
+
+.choice-container{
+    width: 600px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+.points-container{
+    width: 600px;
+    height: 50px;
+    font: bold 20px Arial, sans-serif;
+    color: black;
+    margin-top: -20px;
+    display: flex;
+    justify-content: space-between;
+}
+.show-player-points,.show-computer-points{
+ border-left: 3px solid red;
+ background-color:rgb(134, 196, 207);
+ height: 25px;
+ width: 200px;
+ text-align: center;
+ 
+}
+
+.button-container{
+    width: 700px;
+    height: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+.rock-btn>img,.paper-btn>img,.scissors-btn>img{
+    width: 150px;
+    height: 150px;
 }
